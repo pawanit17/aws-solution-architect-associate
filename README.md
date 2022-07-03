@@ -19,5 +19,20 @@
 - When creating users, we optionally add them to groups and assign policies at group level.
 - Managed policies are the ones that come OOTB.
 - ![image](https://user-images.githubusercontent.com/42272776/176990987-6fd78769-ab71-40c2-b939-6f37af691a67.png)
+- IAM has password policy that is useful. Also MFA = Password + Security Device.
+  - Virtual MFA device { Google Authenticator, Authy }.
+  - Universal 2nd Factor Security Key - physical device.
+  - Hardware Keyfob
+- We can connect to AWS by console, cli and sdk. Cli is built on top of python sdk.
+- Note that Cloud Shell is just a terminal within the AWS Console. So it is similar to Terminat + CLI.
+- ```aws configure```
+- ```aws iam list-users```
+- IAM Roles
+  - Used by services, not by people.
+  - For this, we create permissions and assign them to the AWS Services with IAM Roles.
+  - Ex: EC2 Instance Roles, Lambda Function Roles and Roles for Cloud Formation.
+- IAM Security Tools - these help in auditing
+  - IAM Credentials Report (account level) - lists all the users in the AWS Account
+  - IAM Access Advisor (user level) - When a service is last used. This helps in evaluating the removal of that service for the user.
 
-- 
+# EC2 Fundamentals
