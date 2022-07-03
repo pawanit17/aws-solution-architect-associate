@@ -1,7 +1,7 @@
 # Contents
-[Getting started with AWS](https://duckduckgo.com)
-[IAM & CLI]()
-[EC2 Fundamentals](https://duckduckgo.com)
+- [Getting started with AWS](https://github.com/pawanit17/aws-solution-architect-associate/blob/main/README.md#getting-started-with-aws)
+- [IAM & CLI](https://github.com/pawanit17/aws-solution-architect-associate/blob/main/README.md#iam)
+- [EC2 Fundamentals](https://github.com/pawanit17/aws-solution-architect-associate/blob/main/README.md#ec2-fundamentals)
 
 # Getting started with AWS
 - Regions - ap-southeast-2 etc. It is a cluster of data centers.
