@@ -1,3 +1,8 @@
+# Contents
+[Getting started with AWS](https://duckduckgo.com)
+[IAM & CLI]()
+[EC2 Fundamentals](https://duckduckgo.com)
+
 # Getting started with AWS
 - Regions - ap-southeast-2 etc. It is a cluster of data centers.
   - How to chose a region?
