@@ -41,3 +41,65 @@
   - IAM Access Advisor (user level) - When a service is last used. This helps in evaluating the removal of that service for the user.
 
 # EC2 Fundamentals
+
+
+# Databases
+- ![image](https://user-images.githubusercontent.com/42272776/177026154-8eba14b1-249c-405f-8d06-e76bb1c75dce.png)
+- Managed PostgreSQL, MySQL, Oracle or SQL Server
+- S3 is good for big objects, not so great for small objects.
+- Amazon S3 is indeed a key-value store! (where the key is the full path of the object in the bucket).
+- DynamoDB maximum object size is 400kb. Not fit for larger objects.
+- Amazon Athena is an interactive serverless query service that makes it easy to analyze data in S3 buckets using Standard SQL.
+- RedShift does not replicate by default. So we need to automate snapshot copy across regions.
+- ElasticSearch is renamed to OpenSearch. It allows look ups based on partial matches.
+- AWS Glue is a serverless data-preparation service for extract, transform, and load (ETL) operations.
+
+# Machine Learning
+- Rekognition
+  - Find objects, people, text, scenes in images and videos using ML.
+  - Facial analysis and Facial search, people counting.
+  - Use cases:
+    - Laveling, content moderation, text detection, face analysis, celebrity recognition, pathing etc.
+- Transcribe
+  - Convert speech to text.
+  - Automatic speech recognition.
+  - Use cases: 
+    - Transcribe customer service calls / captioning and subtitling.
+- Polly
+  - Convert text to speech.
+- Translate
+  - Convert from one language to another.
+- Amazon Lex (Alexa)
+  - Build chatbots
+  - ASR to convert speech to text
+  - NLP
+- Amazon Connect
+  -  Virtual contact center
+  -  80% cheaper
+  -  ![image](https://user-images.githubusercontent.com/42272776/177027003-9c1ca3ec-1dd1-4362-a5e4-a41046acd555.png)
+- Amazon Comprehend
+  -  NLP
+- SageMaker
+  - ML Models
+- Forecast
+  - Predict the future sales of a raincoat
+- Kendra
+  - ML powered Document search service
+- Personalize
+  - Recommendations
+  - This is the same tech used by Amazon.com for giving recommendations
+- Textract
+  - Extract data from any scanned documents
+  - Ex: Driving license 
+
+
+
+
+
+
+ 
+
+
+
+
+
