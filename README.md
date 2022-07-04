@@ -42,6 +42,19 @@
 
 # EC2 Fundamentals
 
+## 11 Classic Solutions Architecture Discussions
+
+- ![image](https://user-images.githubusercontent.com/42272776/177169282-fdd87e14-2c29-49bc-be9c-190feb9755f3.png)
+- Instantiate Applications Quickly
+  - EC2 Instances - Golden AMI. Install applications, OS dependencies beforehand and launch EC2 instances form this AMI.
+  - Bootstrap using User Data
+  - Hybrid - Mix Golden AMI and User Data
+  - RDS Databases
+    - Restore from snapshot. The db will have schemas and data ready.
+  - EBS Volumes
+    - Restore from snapshot. The disk will already be formatted and have data.  
+
+
 
 # Databases
 - ![image](https://user-images.githubusercontent.com/42272776/177026154-8eba14b1-249c-405f-8d06-e76bb1c75dce.png)
@@ -92,10 +105,51 @@
   - Extract data from any scanned documents
   - Ex: Driving license 
 
+# More Solution Architectures
 
 
+# Other Services
+
+- CI/CD
+  - CodeCommit, CodeBuild, Elastic Beanstalk, EC2 fleet using CloudFormation - AWS CodeDeploy. CodePipeline for orchestrating everything.
+- CloudFormation
+  - IAC
+  - Useful for replication of the entire stack.
+  - Useful when we want to take down the system and recreate to save costs.
+  - CloudFormation StackSets allows you to create, update, or delete CloudFormation stacks across multiple AWS accounts and AWS regions with a single operation.
+  - Admin account is needed to create stacks.
+- STEP Functions
+  - Serverless visual workflow to orchestrate lambda functions. 
+  - JSON State machine.
+  - ![image](https://user-images.githubusercontent.com/42272776/177164358-1bb2fa20-e82d-4e90-906b-8673d56bab24.png)
+  - Simple Workflow Service is older version.
+- EMR
+  - Supports, Spark, HBase, Presto, Flink
+  - Data processing, Machine learning, Web indexing, BigData
+- OpsWork
+  - Chef and Puppet - server configuration.
+  - Configuration as code.
+  - Recipes and Manifests.
+  - OpsWork = Managed Chef and Puppet.
+- AWS Workspaces
+  - Managed, Secured Cloud Desktop
+  - Eliminates VDI
+- AssSync
+  - Sycn Mobile and Webapps in real-time.
+  - Uses GraphQL
+- Cost Explorer
+  -  Forecast Usage
+  -  Visualize AWS costs and usage over time
+  -  Reports that analyze cost and usage data.
 
 
+# Learn
+- Reserved instances cost effective?
+- DNS A, CNAME and Alias records.
+- Well architcted application.
+- Security Groups
+- Private and Public IP
+- Elastic IP
 
  
 
