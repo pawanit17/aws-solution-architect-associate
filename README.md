@@ -3,7 +3,7 @@
 - [IAM & CLI](https://github.com/pawanit17/aws-solution-architect-associate/blob/main/README.md#iam)
 - [EC2 Fundamentals](https://github.com/pawanit17/aws-solution-architect-associate/blob/main/README.md#ec2-fundamentals)
 
-# Getting started with AWS
+# 3 Getting started with AWS
 - Regions - ap-southeast-2 etc. It is a cluster of data centers.
   - How to chose a region?
     - Compilance. Latency. Available services, Pricing are to be taken into consideration to arrive at a decision.
@@ -15,7 +15,7 @@
   - Content delivery
 - Global services apply to all regions. Ex - Route 53, IAM. On the othe hand, EC2 is not.
 
-# IAM
+# 4 IAM
 - Identity and Access Management
 - Users are people in org. Groups can only contain Users, not other groups.
 - User need not belong to any group or can belong to multiple groups.
@@ -40,7 +40,7 @@
   - IAM Credentials Report (account level) - lists all the users in the AWS Account
   - IAM Access Advisor (user level) - When a service is last used. This helps in evaluating the removal of that service for the user.
 
-# EC2 Fundamentals
+# 5 EC2 Fundamentals
 
 ## 11 Classic Solutions Architecture Discussions
 -Stateless Application ( Time app )
@@ -82,8 +82,10 @@
 - Encryption
   - ![image](https://user-images.githubusercontent.com/42272776/177189263-6a0f6020-9d18-490d-bac1-e0dfc1f517c1.png)
   - ![image](https://user-images.githubusercontent.com/42272776/177189333-7f5388df-c8c2-4f4b-b07f-59c2d3780c5e.png)
+  - With SSE-KMS, the encryption happens in AWS, and the encryption keys are managed by AWS but you have full control over the rotation policy of the encryption key. Encryption keys stored in AWS.
   - ![image](https://user-images.githubusercontent.com/42272776/177189433-fa0c476e-e8fb-4bac-aa8e-16cc0321fd72.png)
   - ![image](https://user-images.githubusercontent.com/42272776/177189568-9c124a06-e3ed-42e9-9a37-b6d1ba98df3a.png)
+  - With Client-Side Encryption, you have to do the encryption yourself and you have full control over the encryption keys. You perform the encryption yourself and send the encrypted data to AWS. AWS does not know your encryption keys and cannot decrypt your data.
   - ![image](https://user-images.githubusercontent.com/42272776/177189640-2b428968-6824-4bcc-82ca-de3b81aba7c8.png)
 - Security
   -  ![image](https://user-images.githubusercontent.com/42272776/177190262-f517e751-87d5-4a06-8c72-f6e3605d01ab.png)
@@ -100,22 +102,11 @@
   -  ![image](https://user-images.githubusercontent.com/42272776/177191902-df74a2bb-21a3-4127-a756-34213477627e.png)
   -  ![image](https://user-images.githubusercontent.com/42272776/177192485-304178f0-73a0-4957-89c1-cb888839ffc9.png)
   -  Website 2 needs CORS setting to be configured if Website 1 has to use it.
+  -  Cross-Origin Resource Sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. To learn more about CORS, go here: https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
  - S3 uses strong consistency.
+ - Explicit DENY in an IAM Policy will take precedence over an S3 bucket policy.
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-# Databases
+# 21 Databases
 - ![image](https://user-images.githubusercontent.com/42272776/177026154-8eba14b1-249c-405f-8d06-e76bb1c75dce.png)
 - Managed PostgreSQL, MySQL, Oracle or SQL Server
 - S3 is good for big objects, not so great for small objects.
@@ -126,7 +117,7 @@
 - ElasticSearch is renamed to OpenSearch. It allows look ups based on partial matches.
 - AWS Glue is a serverless data-preparation service for extract, transform, and load (ETL) operations.
 
-# Machine Learning
+# 27 Machine Learning
 - Rekognition
   - Find objects, people, text, scenes in images and videos using ML.
   - Facial analysis and Facial search, people counting.
