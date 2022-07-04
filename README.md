@@ -43,8 +43,16 @@
 # EC2 Fundamentals
 
 ## 11 Classic Solutions Architecture Discussions
+-Stateless Application ( Time app )
+  - ![image](https://user-images.githubusercontent.com/42272776/177169282-fdd87e14-2c29-49bc-be9c-190feb9755f3.png)
+- Stateful Application ( Shopping Cart )
+  - We can start with sticky sessions in order to ensure that the user content like cart information is not lost.
+  - But this is not fault tolerant. If the server to which the user is assigned is not responsive, the requests may still go to it or the cart may be lost.
+  - So another variant is to have client side cookies. This way, the loadbalancer can forward the requests to any EC2 server. But client cookies have a hard limit of 4KB. And http headers increase in size.
+  - Another variant is to have an Elastic Cache that holds the session information so that any of the EC2 instances can serve the client. They look at the ElasticCache instead of the cookie/sticky session approach.
+  - The solution can also be configured to be MultiAZ to be disaster recoverable. 
+  - ![image](https://user-images.githubusercontent.com/42272776/177171616-5981b1f0-1fe3-484b-a317-50a81424f67a.png)
 
-- ![image](https://user-images.githubusercontent.com/42272776/177169282-fdd87e14-2c29-49bc-be9c-190feb9755f3.png)
 - Instantiate Applications Quickly
   - EC2 Instances - Golden AMI. Install applications, OS dependencies beforehand and launch EC2 instances form this AMI.
   - Bootstrap using User Data
@@ -150,6 +158,7 @@
 - Security Groups
 - Private and Public IP
 - Elastic IP
+- Autoscaling group
 
  
 
