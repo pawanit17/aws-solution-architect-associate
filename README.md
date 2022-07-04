@@ -106,6 +106,15 @@
  - S3 uses strong consistency.
  - Explicit DENY in an IAM Policy will take precedence over an S3 bucket policy.
 
+# 13 AWS SDK, IAM Roles & Policies
+- AWS Instance Metadata - EC2 instances can learn about themselves without using IAM Role.
+- http://169.254.169.254
+- us-east-1 would be taken as default for AWS SDKs.
+- IAM Roles are the right way to provide credentials and permissions to an EC2 instance.
+- AWS Policy simulator helps in understanding if a right is denied or not.\
+- meta-data would contain information like AMI-ID, instance-id etc.
+
+
 # 21 Databases
 - ![image](https://user-images.githubusercontent.com/42272776/177026154-8eba14b1-249c-405f-8d06-e76bb1c75dce.png)
 - Managed PostgreSQL, MySQL, Oracle or SQL Server
