@@ -52,7 +52,8 @@
   - Another variant is to have an Elastic Cache that holds the session information so that any of the EC2 instances can serve the client. They look at the ElasticCache instead of the cookie/sticky session approach.
   - The solution can also be configured to be MultiAZ to be disaster recoverable. 
   - ![image](https://user-images.githubusercontent.com/42272776/177171616-5981b1f0-1fe3-484b-a317-50a81424f67a.png)
-
+- Picture Upload Usecase
+  - ![image](https://user-images.githubusercontent.com/42272776/177185647-3707a835-f754-4c6f-8bd2-bdffd2555624.png) 
 - Instantiate Applications Quickly
   - EC2 Instances - Golden AMI. Install applications, OS dependencies beforehand and launch EC2 instances form this AMI.
   - Bootstrap using User Data
@@ -61,6 +62,56 @@
     - Restore from snapshot. The db will have schemas and data ready.
   - EBS Volumes
     - Restore from snapshot. The disk will already be formatted and have data.  
+- ![image](https://user-images.githubusercontent.com/42272776/177186210-8a287630-0fb3-4087-b969-067a35fffdb4.png)
+- EBS volumnes can only be attached to one EC2 instance at any time.
+- EFS is a network file system (NFS) that allows you to mount the same file system to 100s of EC2 instances. Storing software updates on an EFS allows each EC2 instance to access them.
+
+## 12 Amazon S3
+- Many AWS Services have integration with Amazon S3.
+- Buckets should be globally unique.
+- S3 is global service, Buckets are defined at regional level.
+- ![image](https://user-images.githubusercontent.com/42272776/177187980-322922b4-b1b2-4dd8-8862-1cb6af1434e4.png)
+- Objects in bucket have Key.
+- Key is the Full Path. Object values are the content of the body.
+- ![image](https://user-images.githubusercontent.com/42272776/177187738-4552b590-5483-4e1d-9150-3d73f6b416b9.png)
+- Maximum size is 5TB. Multi-part upload if the chunk is more than 5GB.
+- Versioning has to be enabled at Bucket level.
+- ![image](https://user-images.githubusercontent.com/42272776/177188496-3d25cbfc-d0cf-4dcc-8e1e-3c9bed18f19e.png)
+- ![image](https://user-images.githubusercontent.com/42272776/177188748-34394dad-ed82-4fe9-ba87-06c57a701d27.png)
+- With versions, deleting a main version creates a Delete Marker. Deleting a specific version deletes the file permanently.
+- Encryption
+  - ![image](https://user-images.githubusercontent.com/42272776/177189263-6a0f6020-9d18-490d-bac1-e0dfc1f517c1.png)
+  - ![image](https://user-images.githubusercontent.com/42272776/177189333-7f5388df-c8c2-4f4b-b07f-59c2d3780c5e.png)
+  - ![image](https://user-images.githubusercontent.com/42272776/177189433-fa0c476e-e8fb-4bac-aa8e-16cc0321fd72.png)
+  - ![image](https://user-images.githubusercontent.com/42272776/177189568-9c124a06-e3ed-42e9-9a37-b6d1ba98df3a.png)
+  - ![image](https://user-images.githubusercontent.com/42272776/177189640-2b428968-6824-4bcc-82ca-de3b81aba7c8.png)
+- Security
+  -  ![image](https://user-images.githubusercontent.com/42272776/177190262-f517e751-87d5-4a06-8c72-f6e3605d01ab.png)
+  -  ![image](https://user-images.githubusercontent.com/42272776/177190489-0735768f-1854-4e67-9c07-812bae34e3b0.png)
+  -  ![image](https://user-images.githubusercontent.com/42272776/177190539-67f519f7-b984-4ac5-b2ed-d8355b54f5c0.png)
+  -  ACLs are another way of protecting objects at object level.
+- Website
+  - ![image](https://user-images.githubusercontent.com/42272776/177191150-2fb85b21-6dd4-4976-9bf3-16c347f8ad90.png)
+  - Enable Static Hosting
+  - Uncheck Block Public Access
+  - Add a policy - anyone can do a GetObject on S3 for our specific S3 bucket ARN.
+- CORS
+  -  ![image](https://user-images.githubusercontent.com/42272776/177191722-9079acac-fa04-4699-8104-13621bd3dda4.png)
+  -  ![image](https://user-images.githubusercontent.com/42272776/177191902-df74a2bb-21a3-4127-a756-34213477627e.png)
+  -  ![image](https://user-images.githubusercontent.com/42272776/177192485-304178f0-73a0-4957-89c1-cb888839ffc9.png)
+  -  Website 2 needs CORS setting to be configured if Website 1 has to use it.
+ - S3 uses strong consistency.
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -159,6 +210,10 @@
 - Private and Public IP
 - Elastic IP
 - Autoscaling group
+- When to use EFS and when to use EBS?.
+- X-ray
+- ![image](https://user-images.githubusercontent.com/42272776/177186922-f4444f1e-2272-488d-93be-4cac42eec8ee.png)
+
 
  
 
