@@ -42,6 +42,9 @@
 
 # 5 EC2 Fundamentals
 
+
+# 6 EC2 - Solutions Architect Associate Level
+
 ## 11 Classic Solutions Architecture Discussions
 -Stateless Application ( Time app )
   - ![image](https://user-images.githubusercontent.com/42272776/177169282-fdd87e14-2c29-49bc-be9c-190feb9755f3.png)
@@ -114,6 +117,37 @@
 - AWS Policy simulator helps in understanding if a right is denied or not.\
 - meta-data would contain information like AMI-ID, instance-id etc.
 
+# 18 Containers - ECS, Fargate, ECR and EKS
+- ECS
+  - ECS Tasks on ECS Clusters
+  - EC2 Launch Type
+    - You must provision and maintain the infrastructure.
+    - Each EC2 instance must run the ECS Agent to register in the ECS cluster.
+    - AWS takes care of starting and stopping the containers.
+    - ![image](https://user-images.githubusercontent.com/42272776/177372814-a71683a7-9d26-480c-816f-f5be45534d75.png)
+  - Fargate Launch Type
+    - Do not provision the infrastructure - Serverless.
+    - Just create task definitions.
+    - To scale, increase the number of tasks.
+    - ![image](https://user-images.githubusercontent.com/42272776/177372890-af12f4f2-59f9-429b-9b32-7fb5d67050a7.png)
+  - ![image](https://user-images.githubusercontent.com/42272776/177373032-0f61dc5a-cdde-4356-b71f-06576a450834.png)
+  - Application load balancer goes well with ECS Container deployments. Elastic load balancer does not integrate with Fargate.
+  - Amazon EFS can be used to share / act like a network file system for ECS/Fargate.
+  - EFS volume can be shared between different EC2 instances and different ECS Tasks. It can be used as a persistent multi-AZ shared storage for your containers.
+- ECS Service Auto Scaling
+  - ECS Tasks are available in 3 AZs.
+  - ALB Request Counter per target, ECS Service Average CPU Utilization or Memory Utilization.
+  - ECS Cluster Capability Provider is preferred to Auto Scaling Group Scaling.
+  - ![image](https://user-images.githubusercontent.com/42272776/177375666-a10c3db7-7648-4a07-baa1-4a6a070b43b8.png)
+  - EC2 Instance Profile is the IAM Role used by the ECS Agent on the EC2 instance to execute ECS-specific actions such as pulling Docker images from ECR and storing the container logs into CloudWatch Logs.
+  - ECS Task Role is the IAM Role used by the ECS task itself. Use when your container wants to call other AWS services like S3, SQS, etc.
+- EKS
+  - Managed Kubernetes clusters on AWS.
+  - If your company is already using K8s then EKS is a good choice.
+  - ![image](https://user-images.githubusercontent.com/42272776/177374725-ce530089-8275-4dd3-b22b-52efe7459ada.png)
+- ECR
+  - Backed by Amazon S3. Images stored here.
+  - ECS Clusters use an IAM Role to connect to ECR Reporsitory and pull images.
 
 # 21 Databases
 - ![image](https://user-images.githubusercontent.com/42272776/177026154-8eba14b1-249c-405f-8d06-e76bb1c75dce.png)
@@ -164,7 +198,22 @@
   - Extract data from any scanned documents
   - Ex: Driving license 
 
-# More Solution Architectures
+# 28 More Solution Architectures
+- S3 events can only be routed to Lambda, SNS or SQS.
+- SQS and SQS FIFO can be polled by Lambda functions and the problematic messages could be sent to Dead Letter Queue after few retries.
+- SNS messages could be pushed to Lambda with similar retry + DLQ mechanism.
+- SNS could be subscribed to multiple SQS queues - fan out.
+- Caching is done at CloudFront, a bit on API Gateway, Redis etc.
+- Blocking an IP Address
+  - TODO Revisit
+- High performance computing
+  - AWS Direct Connect
+    - Move GBs of data to the cloud over a private secure network.
+  - Snowball and Snowmobile
+    - Move PBs of data to the cloud.
+  - DataSync
+    - Move large amount of data between on-premise and S3, EFS, FSx for Windows.
+
 
 
 # Other Services
@@ -214,6 +263,9 @@
 - X-ray
 - ![image](https://user-images.githubusercontent.com/42272776/177186922-f4444f1e-2272-488d-93be-4cac42eec8ee.png)
 
+# Revisit
+- 201 and 202 Content in section 18
+- 348 - Blocking an IP address
 
  
 
