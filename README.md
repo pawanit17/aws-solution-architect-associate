@@ -41,7 +41,17 @@
   - IAM Access Advisor (user level) - When a service is last used. This helps in evaluating the removal of that service for the user.
 
 # 5 EC2 Fundamentals
-
+- Budgets let you set custom budgets and AWS would alert you when the threshold is exceeded.
+- EC2 is IAS.
+- EC2 User Data
+  - Bootstrap of our instances.
+  - Run only once at the instance first start.
+  - Ex: Install software, updates, download common packages from internet.
+  - Scripts would be run as admin user.
+- When the instance starts, stops and starts again, the Public IPV4 changes. The private IP address does not change.
+  
+  
+  
 
 # 6 EC2 - Solutions Architect Associate Level
 
