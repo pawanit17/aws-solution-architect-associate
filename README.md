@@ -48,6 +48,7 @@
   - Run only once at the instance first start.
   - Ex: Install software, updates, download common packages from internet.
   - Scripts would be run as admin user.
+  - EC2 User Data is used to bootstrap your EC2 instances using a bash script. This script can contain commands such as installing software/packages, download files from the Internet, or anything you want.
 - When the instance starts, stops and starts again, the Public IPV4 changes. The private IP address does not change.
 - SSH ![image](https://user-images.githubusercontent.com/42272776/177472860-84570285-e2ab-45e4-808e-e2618b30ac16.png)
 - SSH lets users log onto the remote machines on AWS. For SSH to work, the port 22 has to be enabled in the security group.
@@ -62,7 +63,9 @@
 - Compute Optimized C-series ( gaming, machine level, batch processing )
 - Memory optimized R-Series ( large datasets in memory, high performance rdbms, distributed caches, BigData )
 - Storage Optimized ( OLTP, DBs, Cache, File systems )
+  - Storage Optimized EC2 instances are great for workloads requiring high, sequential read/write access to large data sets on local storage. 
 - Security Groups - Firewalls
+  - Security Groups can be attached to multiple EC2 instances within the same AWS Region/VPC.
   - Determined how traffic is allowed into our EC2 instances.
   - ![image](https://user-images.githubusercontent.com/42272776/177498789-e19213a8-19e2-482f-a1f5-5d2a9d01ee0d.png)
   - Only contain allow rules.
@@ -98,12 +101,12 @@
 - Capacity Reservations - reserve capacity in AZ.
 - ![image](https://user-images.githubusercontent.com/42272776/177523929-1b2e4fcc-cced-4f49-9df2-ba5116532e58.png)
 - ![image](https://user-images.githubusercontent.com/42272776/177523976-efb8774b-91d6-49a4-84f3-1bea33a2aaf7.png)
-
-
-  
-  
+- Spot Instances are good for short workloads and this is the cheapest EC2 Purchasing Option. But, they are less reliable because you can lose your EC2 instance.
 
 # 6 EC2 - Solutions Architect Associate Level
+- Private vs Public IP
+  -  
+
 
 ## 11 Classic Solutions Architecture Discussions
 -Stateless Application ( Time app )
