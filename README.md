@@ -49,7 +49,11 @@
   - Ex: Install software, updates, download common packages from internet.
   - Scripts would be run as admin user.
 - When the instance starts, stops and starts again, the Public IPV4 changes. The private IP address does not change.
-  
+- SSH ![image](https://user-images.githubusercontent.com/42272776/177472860-84570285-e2ab-45e4-808e-e2618b30ac16.png)
+- SSH lets users log onto the remote machines on AWS. For SSH to work, the port 22 has to be enabled in the security group.
+- ```chmod 0400 keys.pem```
+- ```ssh -i keys.pem ec2-user@publicip```
+
   
   
 
