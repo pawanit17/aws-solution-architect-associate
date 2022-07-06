@@ -53,6 +53,7 @@
 - SSH lets users log onto the remote machines on AWS. For SSH to work, the port 22 has to be enabled in the security group.
 - ```chmod 0400 keys.pem```
 - ```ssh -i keys.pem ec2-user@publicip```
+- While ec2-user is the default userid, when an EC2 is built using an AMI, the userid can be configured differently.
 - m5.2xlarge
   - m is instance class
   - 5 is the generation
@@ -78,7 +79,10 @@
     - If your application is not accessible (time out), then it's a security group configuration issue.
     - If your application gives a connection refused error, then its an application error or the application is not running/listening on that port.
     - By default, all inbound traffic is blocked and all outgoing traffice is allowed.
-    - 
+    - ![image](https://user-images.githubusercontent.com/42272776/177503412-fea11b6c-c895-4786-b420-ea8be9527654.png)
+    - ![image](https://user-images.githubusercontent.com/42272776/177503614-eee043f1-4e17-477c-8c74-5ee15b256466.png)
+
+
 
   
   
