@@ -105,6 +105,27 @@
 
 # 6 EC2 - Solutions Architect Associate Level
 - Private vs Public IP
+  - ![image](https://user-images.githubusercontent.com/42272776/177610785-e6d00d4d-846f-49df-b007-58eff05cc7a0.png)
+  - Elastic IP
+    - Upon restart of EC2 instance, its public address may change.
+    - If you need to have a fixed public IP for your instance, you need an Elastic IP.
+    - Recommendation is to avoid them.
+    - We create an Elastic IP, then associate them to an instance. With this, the IP address of the EC2 instance changes to the Elastic IP.
+    - Elastic IP is charged as long as we don't associate them to an instance.
+    - Also, we would have to disassociate after use.
+  - Placement Groups
+    - Cluster
+      - Same rack, same AZ. Low latency but if the rack fails, all the instances fail at the same time.
+      - Big Data job that needs to complete fast or low latency and high throughput usecases.  
+    - Spread
+      - Spread across multiple hardwares in a region. Can span across AZs.
+      - High availability usecases.
+      - 7 is the limit.
+    - Partition
+      - Each partition is a rack in AWS.
+      - 100s of EC2 instances - Kafka, Cassandra, HDFC, HBASE.
+  - While launching an EC2 instance, in Advanced section, we can associate the Placement group. 
+- Elastic Network Interface (ENI)
   -  
 
 
@@ -277,9 +298,7 @@
   - DataSync
     - Move large amount of data between on-premise and S3, EFS, FSx for Windows.
 
-
-
-# Other Services
+# 29 Other Services
 
 - CI/CD
   - CodeCommit, CodeBuild, Elastic Beanstalk, EC2 fleet using CloudFormation - AWS CodeDeploy. CodePipeline for orchestrating everything.
@@ -313,6 +332,25 @@
   -  Visualize AWS costs and usage over time
   -  Reports that analyze cost and usage data.
 
+# 30 Whitepapers and Architectures - AWS CSAA
+- Use auto-scaling groups
+- Test systems at production scale
+- Automate
+- Drive architectures using data
+- Well Architected Framework
+  - Operational Excellence
+  - Security
+  - Reliability
+  - Performance Efficiency
+  - Cost Optimization
+  - Sustainability
+- Well-architected tool helps in evaluating to what extent we are confirming to the above framework.
+- Trusted Advisor
+  - AWS Trusted Advisor provides recommendations that help you follow AWS best practices. It evaluates your account by using checks. These checks identify ways to optimize your AWS infrastructure, improve security and performance, reduce costs, and monitor service quotas.
+  - Cost Optimization, Performane, Security, Fault Tolerance, Service Limits.
+  - Business and Enterprise support plans - API access for example. Otherwise, just Core checks listed above.
+  - Weekly notifications are also possible.
+
 
 # Learn
 - Reserved instances cost effective?
@@ -331,6 +369,7 @@
 - 348 - Blocking an IP address
 - 44 Spot Instances & Spot Fleet
 - 45 EC2 Instances Launch Type Hands On
+- Section 30
 
  
 
