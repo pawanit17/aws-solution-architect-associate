@@ -81,7 +81,23 @@
     - By default, all inbound traffic is blocked and all outgoing traffice is allowed.
     - ![image](https://user-images.githubusercontent.com/42272776/177503412-fea11b6c-c895-4786-b420-ea8be9527654.png)
     - ![image](https://user-images.githubusercontent.com/42272776/177503614-eee043f1-4e17-477c-8c74-5ee15b256466.png)
-
+- Instant Connect is a browser based terminal that lets us connect to our EC2 servers. It comes with AWS CLI installed.
+- Never enter your access key and ids onto an EC2 terminal. Instead we should provide IAM Roles to EC2 instances - this is how AWS credentials are passed.
+- On Demand Instances - short workload.
+  - Short term and uninterrupted workloads where we cant predict the application behavior. 
+- Reserved ( 1 & 3 years )
+  - Databases.
+- Savings plan (1 & 3) years commitment to an amount of usage.
+- Spot Instances - may lose instances, but cheap.
+  - This is like bids. If the current spot instance price < what we are paying, the instance stays with us. Otherwise, we get a 2 min grace period.
+  -  Spot request and Spot instances.
+  -  Spot Fleets = Set of Spot instances + (Optional) On-Demand instances.
+- Dedicated Hosts - book entire physical server, control instance placement.
+  - Bring your own license. Very costly. 
+- Dedicated Instances - no other customer will share your hardware.
+- Capacity Reservations - reserve capacity in AZ.
+- ![image](https://user-images.githubusercontent.com/42272776/177523929-1b2e4fcc-cced-4f49-9df2-ba5116532e58.png)
+- ![image](https://user-images.githubusercontent.com/42272776/177523976-efb8774b-91d6-49a4-84f3-1bea33a2aaf7.png)
 
 
   
@@ -310,7 +326,7 @@
 # Revisit
 - 201 and 202 Content in section 18
 - 348 - Blocking an IP address
-
+- 44 Spot Instances & Spot Fleet
  
 
 
