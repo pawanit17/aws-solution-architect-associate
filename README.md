@@ -126,8 +126,24 @@
       - 100s of EC2 instances - Kafka, Cassandra, HDFC, HBASE.
   - While launching an EC2 instance, in Advanced section, we can associate the Placement group. 
 - Elastic Network Interface (ENI)
-  -  
-
+  - Represent Virtual Network Card.
+  - These are what give EC2 instances access to the network.
+  - Each ENI can have
+    - A primary private IPv4 and one or more secondary IPv4.
+    - Bounded to a specific Availability zone.
+    - ![image](https://user-images.githubusercontent.com/42272776/177621658-2aec0817-5e85-461a-9a15-d41018c5bb40.png)
+    - ENIs can be moved from one EC2 to another EC2 - useful for failover when a static ip is used.
+- EC2 Hibernate
+  - RAM state is written to root EBS volume.
+  - Long running processes and boot up time. 
+  - RootVolume must be EBS, encrypted, not instance store and large.
+  - To enable EC2 Hibernate, the EC2 Instance Root Volume type must be an EBS volume and must be encrypted to ensure the protection of sensitive content.z
+- EC2 Nitro
+  - Underlying platform for EC2 instances.
+  - Better networking options, Higher speed EBS. 
+- vCPU
+  - Multiple threads run on 1 CPU
+  - Each thread is a virtual CPU. 
 
 ## 11 Classic Solutions Architecture Discussions
 -Stateless Application ( Time app )
@@ -200,6 +216,16 @@
 - IAM Roles are the right way to provide credentials and permissions to an EC2 instance.
 - AWS Policy simulator helps in understanding if a right is denied or not.\
 - meta-data would contain information like AMI-ID, instance-id etc.
+
+# 15 CloudFront & AWS Global Accelerator
+- AWS CloudFront
+  - Prevents DDoS
+  - CDN
+  - Distribute READs across the world.
+  - Exposes external HTTPS and can talk to internal HTTPS backends.
+  - Origins
+    - S3 bucket
+    - Custom Origin (HTTP)
 
 # 18 Containers - ECS, Fargate, ECR and EKS
 - ECS
@@ -358,6 +384,7 @@
 - Well architcted application.
 - Security Groups
 - Private and Public IP
+- Subnet and VPC
 - Elastic IP
 - Autoscaling group
 - When to use EFS and when to use EBS?.
@@ -369,7 +396,7 @@
 - 348 - Blocking an IP address
 - 44 Spot Instances & Spot Fleet
 - 45 EC2 Instances Launch Type Hands On
-- Section 30
+- 55 Advanced concepts - Nitro, vCPU, Capacity Reservations.
 
  
 
