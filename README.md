@@ -327,6 +327,8 @@
 - 201 and 202 Content in section 18
 - 348 - Blocking an IP address
 - 44 Spot Instances & Spot Fleet
+- 45 EC2 Instances Launch Type Hands On
+
  
 
 
