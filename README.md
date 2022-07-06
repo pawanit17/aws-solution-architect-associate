@@ -53,6 +53,32 @@
 - SSH lets users log onto the remote machines on AWS. For SSH to work, the port 22 has to be enabled in the security group.
 - ```chmod 0400 keys.pem```
 - ```ssh -i keys.pem ec2-user@publicip```
+- m5.2xlarge
+  - m is instance class
+  - 5 is the generation
+  - 2xlarge is size within instance class
+- General purpose ( webservers )
+- Compute Optimized C-series ( gaming, machine level, batch processing )
+- Memory optimized R-Series ( large datasets in memory, high performance rdbms, distributed caches, BigData )
+- Storage Optimized ( OLTP, DBs, Cache, File systems )
+- Security Groups - Firewalls
+  - Determined how traffic is allowed into our EC2 instances.
+  - ![image](https://user-images.githubusercontent.com/42272776/177498789-e19213a8-19e2-482f-a1f5-5d2a9d01ee0d.png)
+  - Only contain allow rules.
+  - Can reference IP or other security groups.
+  - They regulate
+    - Access to ports
+    - Authorized ip ranges - V4 and V6
+    - Controls Inbound and Outbound network.
+    - ![image](https://user-images.githubusercontent.com/42272776/177497869-c2aa59a4-0cab-467f-a2bd-e13bb8e00f4c.png)
+    - Security groups can be attached to multiple instances.
+    - Locked down to region and vpc combination.
+    - If requests are blocked at SG, the EC2 isntances won't even be aware of them.
+    - Good to maintain one separate security group for SSH access.
+    - If your application is not accessible (time out), then it's a security group configuration issue.
+    - If your application gives a connection refused error, then its an application error or the application is not running/listening on that port.
+    - By default, all inbound traffic is blocked and all outgoing traffice is allowed.
+    - 
 
   
   
