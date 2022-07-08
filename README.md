@@ -169,6 +169,60 @@
 - EBS volumnes can only be attached to one EC2 instance at any time.
 - EFS is a network file system (NFS) that allows you to mount the same file system to 100s of EC2 instances. Storing software updates on an EFS allows each EC2 instance to access them.
 
+# 7 EC2 Instance Storage
+- (Elastic Block Storage) EBS Volume
+  - is a network drive that can be attached to instances.
+  - Data persists even after EC2 termination.
+    - Delete on Termination is also available.
+  - Can be attached to only one instance at a time.
+  - Bound to a specific availability zone. Just like EC2 instances.
+    -  EBS in us-east-1a cannot be attached to us-east-1b.
+  - Network USB stick.
+  - Root EBS is by default attached to an EC2 and by default it is marked for termination upon EC2 termination.
+- EBS Snapshot
+  - Make backups.
+  - Select the EBS volume of interest and click on Create Snapshot.
+  - Can copy snapshots across AZ or region.
+  - ![image](https://user-images.githubusercontent.com/42272776/178043885-27c14cf3-c7ac-4040-aaca-1f105d32c28f.png)
+  - Archive tier is 75% cheaper, but takes 24-72 hours for restoring the archive.
+  - Recycle bin for EBS snapshots are useful to retain snapshots so that they can be recovered after deletion.
+- AMI Overview
+  - Customization of an EC2 instance.
+  - AMIs are built for a specific AWS Region, they're unique for each AWS Region. You can't launch an EC2 instance using an AMI in another AWS Region, but you can copy the AMI to the target AWS Region and then use it to create your EC2 instances.
+  - Faster boot time.
+  - AMI are built for a specific region and can be copied acorss regions.
+  - Public AMI, AWS Marketplance AMI, Own AMI.
+  - Building an AMI
+    - User Data script helps in customization of an EC2 instance.
+    - Image and Template -> Create Image.
+    - Launch Instance from AMI or from My AMIs tab in EC2 page.
+- EC2 Instance Store
+  - For usecases that need higher performance - hardware disk/phyisical connection.
+  - Ephemeral storages.
+  - Buffer, cache, temporary content.
+  - If EC2 instance fails, the hardware fails.
+- EBS Volume Types
+  - ![image](https://user-images.githubusercontent.com/42272776/178048305-0a883adb-e2f9-40d3-979b-c51e31464bc5.png)
+  - When creating EC2 instances, you can only use the following EBS volume types as boot volumes: gp2, gp3, io1, io2, and Magnetic (Standard).
+- EBS Multi-attach
+  - ![image](https://user-images.githubusercontent.com/42272776/178048687-02a66169-6239-4925-8358-a5074d66617e.png)
+  - Using EBS Multi-Attach, you can attach the same EBS volume to multiple EC2 instances in the same AZ. Each EC2 instance has full read/write permissions.
+- Encryption
+  - ![image](https://user-images.githubusercontent.com/42272776/178048821-c21ca26b-3e92-4b28-9584-47999070d26b.png)
+  - ![image](https://user-images.githubusercontent.com/42272776/178049084-4eb0715c-ddc1-46f8-837d-fae74c9c3616.png)
+- Amazon EFS
+  - Network File System
+  - Works with EC2 instances in multi-AZ
+  - Highly scalable
+  - Only compatible with Linux based AMI (not Windows)
+  - ![image](https://user-images.githubusercontent.com/42272776/178049457-677c325f-c24c-45ca-af6d-6c8f7b13f129.png)
+  - Content management, web serving
+  - ![image](https://user-images.githubusercontent.com/42272776/178049755-8428dccb-f21e-4b7e-9464-a7a94b2b837a.png)
+- EBS vs EFS vs Instance store
+  - EFS IA helps in reducing costs.
+  
+
+
 ## 12 Amazon S3
 - Many AWS Services have integration with Amazon S3.
 - Buckets should be globally unique.
@@ -208,6 +262,12 @@
   -  Cross-Origin Resource Sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. To learn more about CORS, go here: https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
  - S3 uses strong consistency.
  - Explicit DENY in an IAM Policy will take precedence over an S3 bucket policy.
+
+# 8 High Availability and Scalability : ELB and ASG
+
+
+
+
 
 # 13 AWS SDK, IAM Roles & Policies
 - AWS Instance Metadata - EC2 instances can learn about themselves without using IAM Role.
@@ -396,7 +456,9 @@
 - 348 - Blocking an IP address
 - 44 Spot Instances & Spot Fleet
 - 45 EC2 Instances Launch Type Hands On
-- 55 Advanced concepts - Nitro, vCPU, Capacity Reservations.
+- 55 Advanced concepts - Nitro, vCPU, Capacity Reservations
+- 63 EBS Volume Types
+- 67 EFS Hands on
 
  
 
