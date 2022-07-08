@@ -330,6 +330,15 @@
 - ElasticSearch is renamed to OpenSearch. It allows look ups based on partial matches.
 - AWS Glue is a serverless data-preparation service for extract, transform, and load (ETL) operations.
 
+# 26 Disaster Recovery
+- Recovery Point Object
+  - How frequently do you take backups. 
+- Recovery Time Object
+  - When do you recover in case of a disaster
+- ![image](https://user-images.githubusercontent.com/42272776/178060344-ec9cd337-1fab-4a77-8cb0-e152c9f918b3.png)
+
+
+
 # 27 Machine Learning
 - Rekognition
   - Find objects, people, text, scenes in images and videos using ML.
