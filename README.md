@@ -301,7 +301,10 @@
   - Cookies with expiration are used for stickiness.
   - Cookies
     - Application based - Custom and Application cookies
-    - Duration based 
+      - AWSALB, AWSALBAPP, AWSALBTG, AWSALBAPP
+    - Duration based
+      - AWSALB, AWSELB
+  - Stickyness is a concept concerning the target groups a Load balancer bounds.
 
 ## 12 Amazon S3
 - Many AWS Services have integration with Amazon S3.
