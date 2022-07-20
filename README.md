@@ -221,7 +221,7 @@
 - EBS vs EFS vs Instance store
   - EFS IA helps in reducing costs.
   
-# High Availability & Scalability : ELB & ASG
+# 8 High Availability & Scalability : ELB & ASG
 - Load balancer
   - Spreads the load across multiple downstream instances.
   - Expose single point of access to your application. Application can be scaled with lots of additional servers.
@@ -285,8 +285,23 @@
   - Target groups
     - ![image](https://user-images.githubusercontent.com/42272776/179935162-44cbef43-dcad-493e-a64d-8a8e676d1ead.png)
 
-    
-  
+- Gateway Load Balancer
+  - Manage a fleet of 3rd party network virtual appliances. 
+  - Intrustion detection, Firewalls, Packet inspection usecases.
+  - ![image](https://user-images.githubusercontent.com/42272776/180041029-307c13b0-ac6d-438c-a524-891575388b0f.png)
+  - Operates at Layer 3 - IP packets / Network layer.
+  - Network Gateway + Load Balancer.
+  - GENEVE protocol 6081.
+  - Target Group (Virtual appliances)
+    - EC2 instances
+    - IP Addresses
+
+- Stickyness
+  - Works for CLB nd ALB.
+  - Cookies with expiration are used for stickiness.
+  - Cookies
+    - Application based - Custom and Application cookies
+    - Duration based 
 
 ## 12 Amazon S3
 - Many AWS Services have integration with Amazon S3.
