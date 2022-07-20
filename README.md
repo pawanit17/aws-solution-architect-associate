@@ -221,7 +221,72 @@
 - EBS vs EFS vs Instance store
   - EFS IA helps in reducing costs.
   
+# High Availability & Scalability : ELB & ASG
+- Load balancer
+  - Spreads the load across multiple downstream instances.
+  - Expose single point of access to your application. Application can be scaled with lots of additional servers.
+  - If downstream instances fail, we can replace them hiding them from user. Also LB does not forward requests to these instances.
+  - Does health checks.
+  - SSL Termination for your websites.
+  - Stickiness.
+  - Seperate public and private traffice.
+  
 
+- Elastic Load Balancer
+  - Managed load balancer.
+  - Always working.
+  - Only few configurations to be customized.
+
+- Types of LB on AWS
+  - ![image](https://user-images.githubusercontent.com/42272776/179928885-1f8a042a-aa51-4873-92bc-5f602f48dd1c.png)
+  - ![image](https://user-images.githubusercontent.com/42272776/179929102-4d743ac0-a551-4189-ae33-248f7bb50274.png)
+  - On EC2 instances, we only allow traffic from the LOAD Balancer and not from the external world. So security group of LB to security group of EC2.
+  
+- Classic Load Balancer
+  - Supports TCP (Layer 4) & HTTP(s) (Layer 7)
+  - Fixed hostname  XXX.region.elb.amazonaws.com
+  
+- Application Load Balancer
+  - Only Layer 7
+  - Fixed hostname XXX.region.elb.amazonaws.com
+  - Supports load balancing across machines (target groups) and on the same machine (containers).
+  - Supports HTTP/2 and WebSocket.
+  - Http -> Https redirections are also supported.
+  - Also supports routing based on URL to different target groups also on query Strings, headers
+    - example.com/users
+    - example.com/posts
+  - Also supports routing based on hostname in the URL
+    - one.example.com
+    - other.example.com
+  - Best for Microservices and container based applications - Docker and Amazon ECS.
+  - Target Groups
+    - EC2 instances (can be managed y an Auto Scaling Group) - HTTP
+    - ECS tasks
+    - Lambda functions ( HTTP request is translated to JSON event)
+    - IP Addresses - must be private IPs.
+    - ALB can route to multiple target groups.
+ 
+- Examples
+  - ![image](https://user-images.githubusercontent.com/42272776/179932617-587a46cc-9306-422b-8473-0884e0a5e510.png)
+  - We can split the mobile and desktop traffice across cloud and on-premise hosting platforms using an application load balancer.
+  - ![image](https://user-images.githubusercontent.com/42272776/179932691-1681f511-efdf-48ec-acf4-f81a889f5cc1.png)
+
+- Application servers don't see the client IP directly.
+  - True IP of the client is in the header X-Forwarded-For.
+  - X-Forwarded-Port and X-Forwarded-Proto
+  - ![image](https://user-images.githubusercontent.com/42272776/179933859-f187ffc4-46aa-48a8-9de5-9d205e0ffb63.png)
+
+- Network Load Balancer
+  - TCP & UDP traffic to your instances.
+  - Can handle Millions of request per seconds.
+  - Less latency ~ 100ms. For ALB this is 400ms.
+  - Has one static IP per AZ and supports assigning Elastic IP - helpful for whitelisting specific IP.
+  - Extreme performance. TCP / UDP.
+  - Target groups
+    - ![image](https://user-images.githubusercontent.com/42272776/179935162-44cbef43-dcad-493e-a64d-8a8e676d1ead.png)
+
+    
+  
 
 ## 12 Amazon S3
 - Many AWS Services have integration with Amazon S3.
